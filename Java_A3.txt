@@ -1,0 +1,301 @@
+Q1.Write a simple Banking System program by using OOPs concept where you can get account Holder name balance etc?
+Ans-
+import java.util.Scanner;
+
+class BankAccount {
+    private String accountHolderName;
+    private double balance;
+
+    public BankAccount(String accountHolderName, double initialBalance) {
+        this.accountHolderName = accountHolderName;
+        this.balance = initialBalance;
+    }
+
+    public String getAccountHolderName() {
+        return accountHolderName;
+    }
+
+    public double getBalance() {
+        return balance;
+    }
+
+    public void deposit(double amount) {
+        balance += amount;
+        System.out.println("Deposit of " + amount + " successful.");
+    }
+
+    public void withdraw(double amount) {
+        if (balance >= amount) {
+            balance -= amount;
+            System.out.println("Withdrawal of " + amount + " successful.");
+        } else {
+            System.out.println("Insufficient balance. Withdrawal failed.");
+        }
+    }
+}
+
+public class BankingSystem {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter account holder name: ");
+        String accountHolderName = scanner.nextLine();
+
+        System.out.print("Enter initial balance: ");
+        double initialBalance = scanner.nextDouble();
+
+        BankAccount bankAccount = new BankAccount(accountHolderName, initialBalance);
+
+        System.out.println("Account holder name: " + bankAccount.getAccountHolderName());
+        System.out.println("Balance: " + bankAccount.getBalance());
+
+        System.out.print("Enter amount to deposit: ");
+        double depositAmount = scanner.nextDouble();
+        bankAccount.deposit(depositAmount);
+
+        System.out.print("Enter amount to withdraw: ");
+        double withdrawalAmount = scanner.nextDouble();
+        bankAccount.withdraw(withdrawalAmount);
+
+        scanner.close();
+    }
+}
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Q2. Write a Program where you inherit method from parent class and show method Overridden Concept?
+Ans- 
+class Vehicle {
+    public void displayInfo() {
+        System.out.println("This is a vehicle.");
+    }
+}
+
+class Car extends Vehicle {
+    @Override
+    public void displayInfo() {
+        System.out.println("This is a car.");
+    }
+}
+
+public class InheritanceExample {
+    public static void main(String[] args) {
+        Vehicle vehicle = new Vehicle();
+        vehicle.displayInfo();
+
+        Car car = new Car();
+        car.displayInfo();
+    }
+}
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Q3.Write a program to show run time polymorphism in java?
+Ans- 
+class Animal {
+    public void makeSound() {
+        System.out.println("Animal makes a sound");
+    }
+}
+
+class Dog extends Animal {
+    @Override
+    public void makeSound() {
+        System.out.println("Dog barks");
+    }
+}
+
+class Cat extends Animal {
+    @Override
+    public void makeSound() {
+        System.out.println("Cat meows");
+    }
+}
+
+public class PolymorphismExample {
+    public static void main(String[] args) {
+        Animal animal1 = new Dog();
+        Animal animal2 = new Cat();
+
+        animal1.makeSound();
+        animal2.makeSound();
+    }
+}
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Q4.Write a program to show Compile time polymorphism in java?
+Ans- 
+class Calculator {
+    public int add(int a, int b) {
+        return a + b;
+    }
+
+    public int add(int a, int b, int c) {
+        return a + b + c;
+    }
+}
+
+public class PolymorphismExample {
+    public static void main(String[] args) {
+        Calculator calculator = new Calculator();
+
+        int sum1 = calculator.add(2, 3);
+        System.out.println("Sum of 2 and 3: " + sum1);
+
+        int sum2 = calculator.add(2, 3, 4);
+        System.out.println("Sum of 2, 3, and 4: " + sum2);
+    }
+}
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Q5. Achieve loose coupling in java by using OOPs  concept?
+Ans- 
+// Interface representing a payment method
+interface PaymentMethod {
+    void pay(double amount);
+}
+
+// Class implementing the PaymentMethod interface
+class CreditCardPayment implements PaymentMethod {
+    public void pay(double amount) {
+        System.out.println("Paid " + amount + " using credit card.");
+    }
+}
+
+// Class that uses the PaymentMethod interface
+class Order {
+    private PaymentMethod paymentMethod;
+
+    public void setPaymentMethod(PaymentMethod paymentMethod) {
+        this.paymentMethod = paymentMethod;
+    }
+
+    public void processPayment(double amount) {
+        paymentMethod.pay(amount);
+    }
+}
+
+public class LooseCouplingExample {
+    public static void main(String[] args) {
+        Order order = new Order();
+        
+        // Loose coupling achieved through dependency injection
+        PaymentMethod paymentMethod = new CreditCardPayment();
+        order.setPaymentMethod(paymentMethod);
+
+        double amount = 100.0;
+        order.processPayment(amount);
+    }
+}
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Q6. What is the benefit of encapsulation in java?
+Ans- 
+class Student {
+    private String name;
+    private int age;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        if (age >= 0) {
+            this.age = age;
+        } else {
+            System.out.println("Invalid age value. Age must be non-negative.");
+        }
+    }
+}
+
+public class EncapsulationExample {
+    public static void main(String[] args) {
+        Student student = new Student();
+        
+        student.setName("John");
+        student.setAge(-20);  // Trying to set an invalid age
+        
+        System.out.println("Student name: " + student.getName());
+        System.out.println("Student age: " + student.getAge());
+    }
+}
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Q7.Is java a t 100% Object oriented Programming language? If no why ?
+Ans- 
+1) Primitive Data Types: Java includes primitive data types such as int, boolean, double, etc., which are not objects. These data types do not have associated methods or behaviors like objects do.
+
+2) Static Methods and Variables: Java allows the declaration of static methods and variables, which belong to the class itself rather than individual objects. Static members can be accessed without creating an instance of the class, which deviates from the instance-based nature of pure OOP.
+
+3) Procedural Programming: Java supports procedural programming constructs such as control structures (if-else, for, while), which are not strictly object-oriented. These constructs are inherited from earlier programming paradigms like procedural programming.
+
+4) Inheritance from Multiple Classes: Java does not support multiple inheritance, where a class can inherit from multiple parent classes. It supports single inheritance (i.e., a class can have only one direct superclass), limiting the pure OOP concept of inheriting from multiple classes.
+Despite these factors, Java is still considered a strongly object-oriented language because it embraces key principles of OOP, such as encapsulation, inheritance, polymorphism, and abstraction. Most of the Java language constructs and APIs are designed around objects, and the majority of programming in Java revolves around creating and interacting with objects.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Q8.What are the advantages of abstraction in java?
+Ans- 1) Simplifies Complexity: Abstraction allows you to focus on the essential features of an object or system while hiding unnecessary details. It simplifies complexity by providing a high-level view, making it easier to understand and work with complex systems.
+
+2) Encapsulates Implementation Details: Abstraction separates the interface or contract of an object from its implementation. It encapsulates the internal workings and implementation details, allowing you to modify or change the implementation without affecting the code that uses the abstraction.
+
+3) Enhances Maintainability: Abstraction promotes modular code design and reduces code dependencies. It allows for changes to be made within an abstraction's implementation without impacting other parts of the codebase. This makes the code more maintainable and adaptable to future changes.
+
+4) Provides Flexibility: Abstraction provides flexibility by allowing different implementations to be used interchangeably through the same abstraction. This allows for easy swapping of implementations based on specific requirements or changes in the system.
+
+5) Promotes Code Reusability: Abstraction promotes code reusability by defining reusable interfaces and classes. By programming to abstractions rather than concrete implementations, you can write generic code that can work with different implementations. This reduces code duplication and increases productivity.
+
+6) Improves Testability: Abstraction improves testability by enabling the creation of test cases that focus on the abstraction's interface rather than the implementation details. It allows for easier unit testing and integration testing, as the focus can be on the expected behavior of the abstraction rather than the specific implementation.
+
+7) Supports Team Collaboration: Abstraction provides a common language and understanding between team members working on a project. It allows different team members to work on different parts of the system independently, as long as they adhere to the agreed-upon abstractions and interfaces.
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Q9.What is an abstraction explained with an Example?
+Ans- Abstraction in Java is the process of representing essential features and behavior of an object or system while hiding unnecessary details. It allows you to focus on what an object does rather than how it does it. Here's a simple explanation of abstraction with an example:
+
+Example: Shape Abstraction
+abstract class Shape {
+    public abstract void draw();
+}
+
+class Circle extends Shape {
+    @Override
+    public void draw() {
+        System.out.println("Drawing a circle...");
+    }
+}
+
+class Rectangle extends Shape {
+    @Override
+    public void draw() {
+        System.out.println("Drawing a rectangle...");
+    }
+}
+
+public class AbstractionExample {
+    public static void main(String[] args) {
+        Shape circle = new Circle();
+        circle.draw();  // Drawing a circle...
+
+        Shape rectangle = new Rectangle();
+        rectangle.draw();  // Drawing a rectangle...
+    }
+}
+Explanation:
+
+1) The Shape class is an abstract class that represents the abstraction of a shape. It declares an abstract method draw(), which defines the common behavior of drawing a shape.
+
+2) The Circle and Rectangle classes extend the Shape class and provide their own implementations of the draw() method specific to their respective shapes.
+
+3) In the main() method, objects of the Circle and Rectangle classes are created and assigned to variables of type Shape. This demonstrates the concept of programming to abstractions.
+
+4) The draw() method is called on the Shape objects, which invokes the appropriate implementation based on the actual object type. This shows how the abstraction allows us to work with different shapes using a common interface, without worrying about the specific implementation details.
+In this example, the abstraction of a shape allows us to focus on the behavior of drawing a shape rather than the specific implementation details of each shape. We can work with different shapes through the common Shape abstraction, and each shape provides its own implementation of the draw() method. Abstraction helps manage complexity, promotes code reusability, and provides a clear separation of concerns in the design of object-oriented systems.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Q10.What is the final class in Java?
+Ans- In Java, a final class is a class that cannot be subclassed or extended by other classes. Here's a short explanation of a final class in Java:
+
+A final class is a class that is marked with the final keyword in its class declaration. When a class is declared as final, it cannot be inherited or extended by any other class. In other words, it is the last class in the inheritance hierarchy and cannot have any subclasses.
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
