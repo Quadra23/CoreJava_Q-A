@@ -1,0 +1,90 @@
+Q1.What is Collection in Java?
+Ans- In Java, a collection refers to a group of objects that are stored and manipulated together as a single unit. Collections provide a set of interfaces, classes, and algorithms to manage and work with groups of objects efficiently. They offer functionalities like adding, removing, and accessing elements, as well as operations for searching, sorting, and iterating over the elements in a collection.
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Q2. Differentiate between Collection and collections in the context of Java.
+Ans- In Java, "Collection" (with a capital "C") refers to the interface in the Java Collections Framework that represents a group of objects. It provides a common set of methods to manipulate and access elements in a collection.
+
+On the other hand, "collections" (with a lowercase "c") refers to the broader concept of various classes and data structures available in the Java Collections Framework. It encompasses implementations of Collection interfaces such as List, Set, and Map, as well as utility classes and algorithms provided by the framework.
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Q3. What are the advantages of the Collection framework?
+Ans- The advantages of the Collection framework in Java are:
+
+Reusability: The Collection framework provides a set of reusable interfaces, classes, and algorithms that can be used across different projects and applications.
+
+Consistency: The framework enforces a consistent and standardized way of working with collections, making it easier for developers to understand and use.
+
+Performance: The framework offers efficient data structures and algorithms for managing and manipulating collections, resulting in improved performance.
+
+Flexibility: The Collection framework provides a wide range of collection types, such as lists, sets, and maps, catering to different data storage and retrieval needs.
+
+Interoperability: The framework allows collections to be easily converted, iterated over, and transformed, facilitating seamless integration with other Java APIs and libraries.
+
+Safety: The framework includes built-in type safety checks, ensuring that only the appropriate types of objects can be stored in collections, reducing the risk of runtime errors.
+
+Scalability: The Collection framework is designed to handle collections of varying sizes, making it suitable for small-scale to large-scale applications.
+
+In summary, the Collection framework offers reusability, consistency, performance, flexibility, interoperability, safety, and scalability, making it a valuable tool for managing collections of objects in Java.
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Q4.Explain the various interfaces used in the Collection framework.
+Ans- In the Collection framework, the various interfaces used are:
+
+List: Represents an ordered collection of elements that allows duplicate values. Examples include ArrayList, LinkedList, and Vector.
+
+Set: Represents a collection of unique elements with no duplicates. Examples include HashSet, TreeSet, and LinkedHashSet.
+
+Queue: Represents a collection designed for holding elements prior to processing. It typically follows the FIFO (First-In, First-Out) principle. Examples include LinkedList, PriorityQueue, and ArrayDeque.
+
+Map: Represents a mapping between unique keys and values. Each key is associated with a single value. Examples include HashMap, TreeMap, and LinkedHashMap.
+
+Deque: Represents a double-ended queue that supports insertion and removal from both ends. Examples include ArrayDeque and LinkedList.
+
+Iterator: Provides a way to iterate over elements in a collection sequentially.
+
+Comparable: Allows objects to define a natural ordering by implementing the compareTo() method.
+
+Comparator: Allows for custom comparison of objects by implementing the compare() method.
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Q5.Differentiate between List and Set in Java.
+Ans- In Java, the differences between List and Set can be summarized as follows:
+
+1) Duplicate Elements: List allows duplicate elements, meaning it can contain multiple occurrences of the same value. Set, on the other hand, does not allow duplicate elements. Each element in a Set must be unique.
+
+2) Ordering: List maintains the insertion order of elements, meaning the elements are stored in the order they were added. Set does not guarantee any specific order of elements. Some Set implementations, like LinkedHashSet, maintain the insertion order, but others, like HashSet, do not.
+
+3) Index-based Access: List allows access to elements based on their index. You can retrieve elements by specifying their position in the List. Set does not provide direct index-based access to elements. To access elements in a Set, you typically use iteration or specific methods like contains().
+
+4) Collection Semantics: List is a collection that allows multiple occurrences of the same element and preserves the order, making it suitable for scenarios where duplicates or specific ordering is needed. Set is a collection that enforces uniqueness of elements, making it useful when you need to ensure distinct values.
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Q6.What is the Differentiate between Iterator and ListIterator in Java.
+Ans- 1) Duplicate Elements: List allows duplicate elements, meaning it can contain multiple occurrences of the same value. Set, on the other hand, does not allow duplicate elements. Each element in a Set must be unique.
+
+2) Ordering: List maintains the insertion order of elements, meaning the elements are stored in the order they were added. Set does not guarantee any specific order of elements. Some Set implementations, like LinkedHashSet, maintain the insertion order, but others, like HashSet, do not.
+
+3) Index-based Access: List allows access to elements based on their index. You can retrieve elements by specifying their position in the List. Set does not provide direct index-based access to elements. To access elements in a Set, you typically use iteration or specific methods like contains().
+
+4) Collection Semantics: List is a collection that allows multiple occurrences of the same element and preserves the order, making it suitable for scenarios where duplicates or specific ordering is needed. Set is a collection that enforces uniqueness of elements, making it useful when you need to ensure distinct values.
+
+5) In summary, List allows duplicates, maintains insertion order, and provides index-based access to elements, while Set does not allow duplicates, does not guarantee order, and does not provide direct index-based access. The choice between List and Set depends on the requirements of your program and the nature of the data you need to store.
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Q7.What is the Differentiate between Comparable and Comparator
+Ans- 
+In Java, the differences between Comparable and Comparator can be summarized as follows:
+1) Interface Implementation: Comparable is implemented by the class of the objects being compared. It defines the natural ordering of objects within the class itself. Comparator, on the other hand, is a separate interface that can be implemented by a different class to define custom comparison logic for objects.
+
+2) Comparison Logic: Comparable provides the compareTo() method that defines the default natural ordering of objects. The comparison logic is implemented within the class itself. Comparator provides the compare() method that allows for custom comparison logic to be defined externally in a separate class.
+
+3) Object Type Dependency: Comparable imposes the natural ordering on the class of the objects being compared. It requires modification of the class code itself to define the comparison logic. Comparator allows for multiple external classes to define different comparison strategies for the same objects, providing flexibility and independence from the object's class.
+
+4) Single vs. Multiple Comparisons: Comparable allows for a single, default comparison logic for objects. It is used when the objects have a natural order. Comparator, on the other hand, allows for multiple comparison strategies to be defined by different Comparator implementations, providing flexibility in sorting or ordering objects in various ways.
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Q8.What is collision in HashMap?
+Ans- In the context of a HashMap in Java, a collision occurs when two or more different keys hash to the same index in the underlying array.
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Q9.Distinguish between a hashmap and a Treemap.
+Ans- 1) HashMap: Uses a hash table data structure, allows null values and provides average O(1) time complexity for basic operations (insertion, deletion, retrieval). It does not maintain any specific order of the keys.
+
+2) TreeMap: Uses a red-black tree data structure, does not allow null keys and offers ordered key-value pairs based on the natural ordering or a custom Comparator. It provides O(log n) time complexity for basic operations and supports additional operations like range queries and sorting.
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Q10.Define LinkedHashMap in Java
+Ans- In Java, LinkedHashMap is a class that extends HashMap and provides the same functionality of key-value mapping with an added feature of maintaining the insertion order of elements.
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
