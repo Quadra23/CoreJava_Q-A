@@ -1,0 +1,89 @@
+Q1.What is the use of JDBC in java?
+Ans- The use of JDBC (Java Database Connectivity) in Java is to provide a standardized API for connecting Java applications to databases. It allows developers to interact with databases, execute SQL queries, and retrieve and manipulate data from Java programs.
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Q2.What are the steps involved in JDBC?
+Ans-The steps involved in JDBC (Java Database Connectivity) are:
+
+Load the JDBC driver.
+Establish a database connection.
+Create a statement object.
+Execute SQL queries or updates.
+Process the result set, if applicable.
+Close the statement and connection to release resources.
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Q3.What are the types of statement in JDBC in java?
+Ans- The types of statements in JDBC (Java Database Connectivity) are:
+
+Statement: Used for executing simple SQL queries without any parameters.
+
+PreparedStatement: Used for executing parameterized SQL queries. It provides better performance and security by precompiling the SQL statement.
+
+CallableStatement: Used for executing stored procedures or functions in the database. It allows passing input parameters, output parameters, and returning result sets from the stored procedure.
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Q4.What is Servlet in Java?
+Ans-In Java, a Servlet is a Java class that extends the capabilities of a server to process client requests and generate dynamic responses. It is used to develop web applications and runs on a web server. Servlets handle HTTP requests, perform business logic, and generate dynamic HTML content or interact with databases.
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Q5.Explain the life Cycle of servlet?
+Ans- The life cycle of a servlet can be summarized in the following steps:
+
+1) Initialization: Servlet is loaded and initialized by the web container when it receives the first request for that servlet.
+
+2) Service: The servlet's service() method is invoked by the container to process the incoming request. The servlet generates a response based on the request and sends it back to the client.
+
+3) Destruction: When the web container decides to shut down or unload the servlet, it calls the servlet's destroy() method to perform any necessary cleanup tasks.
+
+4) Initialization (again): If a subsequent request is received for the same servlet, the container may decide to re-initialize the servlet by invoking its init() method.
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Q6.Explain the difference between the RequestDispatcher.forward() and HttpServletResponse.sendRedirect() methods?
+Ans-The difference between RequestDispatcher.forward() and HttpServletResponse.sendRedirect() methods can be summarized as follows:
+
+1) RequestDispatcher.forward(): Forwards the control and the request to another resource (servlet, JSP, or HTML) on the server-side. It happens internally within the server, and the client is unaware of the forwarding. The URL remains the same in the client's browser.
+
+2) HttpServletResponse.sendRedirect(): Sends a redirect response to the client, instructing the client's browser to send a new request to a different URL. It causes an additional round-trip to the server, and the client is aware of the redirection. The URL in the client's browser changes to the new URL.
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Q7.What is the purpose of the doGet() and doPost() methods in a servlet?
+Ans-The purpose of the doGet() and doPost() methods in a servlet is to handle HTTP GET and POST requests, respectively. They are responsible for processing the client's request and generating an appropriate response based on the HTTP method used. The doGet() method is typically used for retrieving information, while the doPost() method is used for submitting data or performing actions that may modify server-side resources.
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Q8.Explain the JSP Model-View-Controller (MVC) architecture.
+Ans- The JSP Model-View-Controller (MVC) architecture is a design pattern that separates the concerns of an application into three components:
+
+Model: Represents the data and business logic of the application. It encapsulates the data and provides methods to manipulate and retrieve it. It represents the application's domain and interacts with the database or other data sources.
+
+View: Represents the presentation layer of the application. It is responsible for rendering the user interface and displaying the data to the user. In JSP, the view is typically represented by the JSP pages that generate the HTML markup.
+
+Controller: Handles the flow and logic of the application. It receives the user's input from the view, interacts with the model to retrieve or modify the data, and determines the appropriate view to display to the user. In JSP, the controller logic can be implemented using servlets or other Java classes.
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Q9.What are some of the advantages of Servlets?
+Ans-Some advantages of using servlets in Java are:
+
+Platform Independence: Servlets can run on any platform that supports the Java Virtual Machine (JVM), providing platform independence.
+
+Wide Support: Servlets are widely supported by various web servers and application servers, making them a popular choice for web development.
+
+Efficient Performance: Servlets are efficient in terms of memory usage and processing speed, resulting in high-performance web applications.
+
+Scalability: Servlets can handle multiple requests concurrently, allowing for scalability and handling a large number of users.
+
+Extensive API: Servlets have an extensive API that provides functionalities for session management, cookie handling, URL mapping, and more.
+
+Reusability: Servlets can be easily reused and integrated into different projects, promoting code reusability.
+
+Integration with Java EE: Servlets are part of the Java Enterprise Edition (Java EE) specification, allowing easy integration with other Java EE technologies like JSP, JDBC, and EJB.
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Q10.What are the limitations of JSP?
+Ans-Some limitations of JSP (JavaServer Pages) include:
+
+Complexity: JSP can become complex when mixing business logic and presentation code within the same page, leading to decreased maintainability.
+
+Lack of Separation of Concerns: Without proper architectural patterns, JSP pages can become cluttered with both presentation and business logic, violating the principle of separation of concerns.
+
+Steep Learning Curve: JSP requires a good understanding of Java and web development concepts, making it challenging for beginners to grasp.
+
+Limited Reusability: JSP pages are typically tied to specific applications and may lack reusability across multiple projects or scenarios.
+
+Limited Control Over HTML Output: JSP may not provide fine-grained control over the generated HTML output, leading to potential compatibility issues or difficulty in achieving specific design requirements.
+
+Maintenance Challenges: As JSP applications grow larger and more complex, maintaining and debugging them can become challenging due to the mixed code and lack of modularization.
+
+Performance Overhead: The process of translating JSP pages into servlets at runtime can introduce some performance overhead compared to pre-compiled alternatives.
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
